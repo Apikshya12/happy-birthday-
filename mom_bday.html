@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><head>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<title>Happy Birthday MOM</title>
+
+
+
+</head>
+
+<body>
+
+<!-- BALLOONS -->
+<div class="balloon" style="left:10%; animation-delay:0s; background-color: #880e4f;"></div>
+<div class="balloon" style="left:30%; animation-delay:2s; background-color: purple;"></div>
+<div class="balloon" style="left:50%; animation-delay:4s; background-color: aqua;"></div>
+<div class="balloon" style="left:70%; animation-delay:1s;"></div>
+<div class="balloon" style="left:90%; animation-delay:3s;"></div>
+
+<div class="container">
+  <h1 class="sparkle title-beat">HAPPY BIRTHDAY MAMU 🎉
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"></h1>
+
+
+
+
+    <div class="photo-wrapper">
+       <img src="/mamu/WhatsApp Image 2025-12-24 at 17.11.36.jpeg" class="photo heartbeat">
+<img src="/mamu/WhatsApp Image 2025-12-24 at 17.11.37 (1).jpeg" class="photo heartbeat">
+
+       
+    </div>
+
+<p id="typingText"></p>
+
+    <div class="cake"><img src="/download.jfif"></div>
+   
+<div class="gift-box" onclick="openGift()">🎁</div>
+<div clc:\Users\Acer\Desktop\Happy birthday\mamuass="gift-message" id="giftMsg">
+  This gift is full of love, hugs, and prayers for you, Mom 💖<br>
+  You are my greatest blessing 🌸
+</div>
+
+
+    <p class="flowers">🌸 🌹 🌷 🌼 💐</p>
+
+    <p>
+        Thank you for everything you do for me every single day.  
+        I love you so much 💖
+    </p>
+
+    <!-- MUSIC -->
+   
+
+<audio id="audio" loop>
+  <source src="/happy-birthday-357371 (1).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.getElementById('audio');
+
+  // Try autoplay
+  audio.play().catch(() => {});
+
+  // Start on first click if blocked
+  document.addEventListener('click', () => audio.play(), { once: true });
+</script>
+
+<script>
+const text = `Dear Mom 💕
+You are my biggest blessing, my strength, and my forever love.
+May your life be filled with happiness, health, and endless smiles.`;
+
+let index = 0;
+const speed = 50;
+
+function typeEffect() {
+  if (index < text.length) {
+    document.getElementById("typingText").innerHTML += 
+      text.charAt(index) === "\n" ? "<br>" : text.charAt(index);
+    index++;
+    setTimeout(typeEffect, speed);
+  }
+}
+
+window.addEventListener("load", typeEffect);
+</script>
+
+
+    <div class="footer">
+        Made with love by <b>(Your Daughter) Apikshya</b> 💝
+    </div>
+</div>
+
+<!-- Falling Hearts Script -->
+<script>
+// Number of hearts
+const heartCount = 30;
+
+for(let i = 0; i < heartCount; i++){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+    heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+    heart.innerText = '💖';
+    heart.style.opacity = Math.random();
+    heart.style.animationDelay = Math.random() * 6 + 's';
+    document.body.appendChild(heart);
+}
+</script>
+
+<script>
+const wishes = [
+  "Love you Mom 💖",
+  "Best Mom Ever 🌸",
+  "You are my life 💐",
+  "Forever grateful 💕",
+  
+];
+
+setInterval(() => {
+  const wish = document.createElement("div");
+  wish.className = "wish";
+  wish.textContent = wishes[Math.floor(Math.random() * wishes.length)];
+  wish.style.left = Math.random() * 80 + "vw";
+  wish.style.animationDuration = (6 + Math.random() * 4) + "s";
+  document.body.appendChild(wish);
+
+  setTimeout(() => {
+    wish.remove();
+  }, 10000);
+}, 2000);
+</script>
+<script>
+function openGift() {
+  document.querySelector(".gift-box").innerText = "🎊";
+  document.getElementById("giftMsg").style.display = "block";
+
+  // CONFETTI BLAST
+  for (let i = 0; i < 80; i++) {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.backgroundColor =
+      ["#ff69b4", "#ff1493", "#ffd700", "#00e5ff", "#8e24aa"]
+      [Math.floor(Math.random() * 5)];
+
+    confetti.style.animationDuration = (2 + Math.random() * 2) + "s";
+    document.body.appendChild(confetti);
+
+    setTimeout(() => confetti.remove(), 4000);
+  }
+}
+</script>
+
+
+</body>
+</html>
